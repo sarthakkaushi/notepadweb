@@ -32,7 +32,7 @@ router.post('/',(req,res)=>{
   db.Notepad.create(sendData).then(()=>{
     res.send({
       result:"Saved Into Database",
-      url:`http://localhost:3000/notes/${sendData.slug}`
+      url:`http://localhost:4000/notes/${sendData.slug}`
 
     })
   })

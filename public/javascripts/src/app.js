@@ -4,7 +4,7 @@ var editor = new FroalaEditor('#example', {
     
 
     // Set the save URL.
-    // saveURL: 'http://localhost:3000/',
+    // saveURL: 'http://localhost:4000/',
 
     // HTTP request type.
     saveMethod: 'POST',
@@ -48,7 +48,7 @@ saveBtn.addEventListener('click',()=>{
 const saveToDatabase=(title,content)=>{
     //console.log(editor.html.get())
 
-    axios.post('http://localhost:3000/',{
+    axios.post('http://localhost:4000/',{
         title:title,
         content:content
     }).then(r=>{

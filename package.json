@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "build": "webpack-dev-server"
+    "build": "webpack-dev-server",
+    "both": "concurrently \"npm:build\" \"npm:start\""
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",

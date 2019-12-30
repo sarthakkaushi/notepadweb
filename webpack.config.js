@@ -11,7 +11,7 @@ module.exports={
     mode:"development",
     devServer:{
         proxy:{
-            "/":"http://localhost:3000/",
+            "/":"http://localhost:4000/",
             changeOrigin: true
         }
     }
