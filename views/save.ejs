@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+      <!-- Popper JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+    <title>Document</title>
+    <style>
+        .fa {
+  padding: 10px;
+  font-size: 20px;
+  /* width: 20px; */
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius:8px;
+}
+
+.fa:hover {
+    /* opacity: 0.7; */
+    text-decoration: none;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+.fa-files-o{
+  background: cadetblue;
+    color: white;
+}
+    </style>
+</head>
+<body>
+  <%- include ./partials/nav.ejs %>
+<div class="container">
+  
+  <h1><%= data.title %></h1>
+  <div><%- data.text %></div>
+
+
+  
+<div class="share-icons">
+              
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/notes/<%= data.slug%>" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-google"></a>
+  <a href="#" class="fa fa-linkedin"></a>
+  <a href="#" class="fa fa-youtube"></a>
+  <a href="#" class="fa fa-instagram"></a>
+  <a href="#" class="fa fa-pinterest"></a>
+  <a href="#copy" id="copy-me" class="fa fa-files-o" data-toggle="popover" data-clipboard-text="http://localhost:3000/notes/<%= data.slug%>">
+    <!-- <button class="btn" >
+      Copy to clipboard
+    </button> -->
+  </a>
+</div>
+</div>
+    
+
+    
+<script>
+
+      var btns = document.querySelector('.fa-files-o');
+
+var clipboard = new ClipboardJS(btns);
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+// new ClipboardJS('.fa-files-o');
+</script>
+
+</body>
+</html>
